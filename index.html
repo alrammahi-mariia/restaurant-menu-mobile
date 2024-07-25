@@ -41,41 +41,57 @@
                     </div>
                         <button class="add-btn" id="add-btn">+</button>
                 </div>
-                </div>
-                <div class="order-section" id="order-section">
+                <div class="order-container">
                     <h2>Your order</h2>
-                    <div>
-                        <h2 class="food-item-title" id="food-item-title">TITLE</h2>
-                        <button id="remove-btn">remove</button>
+                    <div class="order-item">
+                        <div class="item-name">Pizza <span class="remove">remove</span></div>
+                        <div class="item-price">$14</div>
                     </div>
-                    <p class="food-item-price" id="food-item-price">PRICE</p>
-                    <h2 id="total-price">Total price:</h2>
-                    <p class="food-item-price" id="food-item-price">PRICE</p>
-                    <button id="order-btn">Complete order</button>
+                    <div class="order-item">
+                        <div class="item-name">Beer <span class="remove">remove</span></div>
+                        <div class="item-price">$12</div>
+                    </div>
+                    <div class="order-total">
+                        <span>Total price:</span>
+                        <span>$26</span>
+                    </div>
+                    <button class="complete-order">Complete order</button>
                 </div>
-                <div class="details-modal" id="details-modal">
-                    <h3>Enter card details</h3>
-                    <form id="payment-form">
-                        <input 
-                            type="text" 
-                            placeholder="Enter your name" 
-                            name="fullName" 
-                            aria-label="Full name" 
-                            required/>
-                        <input 
-                            type="text" 
-                            placeholder="Enter card number" 
-                            name="cardNumber" 
-                            aria-label="Card number" 
-                            required/>
-                        <input 
-                            type="text" 
-                            placeholder="Enter CVV" 
-                            name="cvv"
-                            aria-label="CVV" 
-                            required/>
-                        <button type="submit" class="modal-btn">Pay</button>
-                    </form>
+                <div class="modal">
+                    <div class="modal-content">
+                        <h2>Enter card details</h2>
+                        <input type="text" placeholder="Enter your name">
+                        <input type="text" placeholder="Enter card number">
+                        <input type="text" placeholder="Enter CVV">
+                        <button class="pay-button">Pay</button>
+                    </div>
+                </div>
+            
+                <div class="modal">
+                    <div class="modal-content">
+                        <h3>Enter card details</h3>
+                        <form id="payment-form">
+                            <input 
+                                type="text" 
+                                placeholder="Enter your name" 
+                                name="fullName" 
+                                aria-label="Full name" 
+                                required/>
+                            <input 
+                                type="text" 
+                                placeholder="Enter card number" 
+                                name="cardNumber" 
+                                aria-label="Card number" 
+                                required/>
+                            <input 
+                                type="text" 
+                                placeholder="Enter CVV" 
+                                name="cvv"
+                                aria-label="CVV" 
+                                required/>
+                            <button type="submit" class="modal-btn">Pay</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="order-complete-msg" id="order-complete-msg">
                     <p>Thanks, James! Your order is on its way!</p>
