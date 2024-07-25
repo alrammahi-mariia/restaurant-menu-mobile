@@ -1,0 +1,181 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Smythe', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+}
+
+/* typography and icons */
+
+h1, h2, h3, p {
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1{
+    font-size: 40px;
+}
+
+h2{
+    font-size: 28px;
+}
+
+#food-item-description{
+    font-size: 16px;
+    color: #8B8B8B;
+}
+
+#restaurant-name{
+    padding-top: 46px;
+    margin-bottom: 10px;
+}
+
+#restaurant-slogan {
+    font-size: 22px;
+    margin: 0;
+}
+
+#food-item-price{
+    font-size: 20px;
+}
+
+
+/* layout */
+
+.app-container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+header{
+    padding: 0 0 25px 46px;
+    color: white;
+    background-image: url("./assets/ferks-guare-KEZdWfYD-ow-unsplash\ 1.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    height: 170px;
+}
+
+/* food items list */
+
+.food-item-image {
+    width: 80px;
+    height: 80px;
+    margin-right: 30px;
+}
+
+.food-item {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px solid #ccc;
+   margin: 50px 40px;
+   padding-bottom: 50px;
+}
+
+
+.item-content {
+    display: flex;
+    align-items: center;
+}
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-details h2 {
+    margin: 0;
+}
+
+.item-details p {
+    margin: 5px 0 0 0;
+}
+
+.add-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#add-btn{
+    color: #3C3C3C;
+    cursor: pointer;
+    font-size: 36px;
+    font-weight: 200;
+    font-family: "Inter", sans-serif;
+    background-color: transparent;
+    border: 1px solid #DEDEDE;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+/* tweet */
+
+.tweet{
+    border-top: 1px solid lightgray;
+    padding: 20px 0 0 0;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.tweet-inner{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tweet-details{
+    display: flex;
+    font-size: 13px;
+    justify-content: space-between;
+    width: 160px;
+}
+
+.tweet-detail{
+    display: flex;
+    gap: 4px;
+}
+
+.tweet-reply{
+    border-top: 1px solid lightgray;
+    padding: 20px 0 0 0px;
+    margin: 10px 0 10px 40px;
+    width: 80%;
+}
+
+.handle{
+    font-size: 12px;
+    font-weight: 500;
+    color: #555;
+    margin-top: 0;
+}
+
+.tweet-text{
+    width: 207px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* images */
+
+.profile-pic{
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    width: 48px;
+}
+
+/* utility */
+.hidden{
+    display: none;
+}
