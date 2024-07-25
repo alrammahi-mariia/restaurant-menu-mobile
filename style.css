@@ -118,18 +118,31 @@ header{
     height: 50px;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+#add-btn:hover {
+    color: #000;
+    font-weight: 400;
+    border: 1px solid #000;
+}
+
+.active-btn {
+    color: #000;
+    border: 1px solid #000;
 }
 
 /* order container */
 
 .order-container {
-    padding: 20px;
+    padding: 46px;
     text-align: center;
+    display: none;
 }
 
 .order-container h2 {
     margin: 0 0 20px 0;
-    font-size: 1.5em;
+    font-size: 28px;
 }
 
 .order-item {
@@ -139,20 +152,21 @@ header{
 }
 
 .item-name {
-    font-size: 1.1em;
     display: flex;
     align-items: center;
+    font-size: 28px;
 }
 
 .remove {
     margin-left: 10px;
     color: #ccc;
-    font-size: 0.9em;
+    font-size: 12px;
     cursor: pointer;
+    font-family: Verdana;
 }
 
 .item-price {
-    font-size: 1.1em;
+    font-size: 20px;
 }
 
 .order-total {
@@ -161,15 +175,16 @@ header{
     margin: 20px 0;
     padding-top: 10px;
     border-top: 1px solid #000;
-    font-size: 1.2em;
+    font-size: 28px;
 }
 
-.complete-order {
+.complete-order,
+.modal-btn {
     background-color: #16DB99;
     color: white;
     border: none;
-    padding: 15px;
-    width: 500px;
+    padding: 20px;
+    width: 100%;
     font-size: 14px;
     font-family: Verdana;
     font-weight: bold;
@@ -177,14 +192,15 @@ header{
     border-radius: 5px;
 }
 
-.complete-order:hover {
+.complete-order:hover, 
+.modal-btn:hover {
     background-color: #137e5b;
 }
 
 /* modal */
 
 .modal {
-    /* display: none; */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -192,9 +208,11 @@ header{
     background-color: white;
     padding: 20px;
     border-radius: 8px;
+    border: 1px solid #757575;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    z-index: 1000;
+    width: 525px;
+    height: 540px;
+    z-index: 1;
    
 }
 
@@ -205,30 +223,34 @@ header{
 }
 
 .modal-content h2 {
-    margin-bottom: 20px;
-    font-size: 1.5em;
+    margin: 46px auto;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .modal-content input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid #757575;
     border-radius: 4px;
+    font-size: 20px;
 }
 
-.pay-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-}
+/* order complete message */
 
-.pay-button:hover {
-    background-color: #45a049;
+.order-complete-msg{
+    margin: 0 auto 100px auto;
+    width: 500px;
+    height: 120px;
+    background-color: #ECFDF5;
+    color: #065F46;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+
 }
 
 /* utility */
