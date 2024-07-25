@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+
 export const menuItems = [
     {
         title: 'Pizza',
@@ -5,7 +7,7 @@ export const menuItems = [
         description: 'pepperoni, mushroom, mozarella',
         price: 14,
         isAdded: false,
-        uuid: '',
+        uuid: uuidv4(),
     },
 
     {
@@ -14,7 +16,7 @@ export const menuItems = [
         description: 'beef, cheese, lettuce',
         price: 12,
         isAdded: false,
-        uuid: '',
+        uuid: uuidv4(),
     },
     {
         title: 'Beer',
@@ -22,8 +24,7 @@ export const menuItems = [
         description: 'grain, hops, yeast, water',
         price: 12,
         isAdded: false,
-        uuid: '',
-    }
-    
+        uuid: uuidv4(),
+    }  
 
 ]
