@@ -1,5 +1,6 @@
 import { menuItems } from "./data.js";
-const menuItemsContainer = document.querySelector('.menu-items-container')
+const menuItemsContainer = document.querySelector('.menu-items-container');
+const orderContainer = document.querySelector('.order-container');
 
 function renderMenuItems(items){
     return menuItemsContainer.innerHTML = items.map(item => {
@@ -15,12 +16,19 @@ function renderMenuItems(items){
                         </div>
                 </div>
                 <div class="add-btn">          
-                    <button class="add-btn" id="add-btn">+</button>
+                    <button class="add-btn" id="add-btn" data-add="${item.id}">+</button>
                 </div>
             </div>
         </div>`
     }).join("");
 
 }
+
+document.addEventListener('click', function(e){
+    if (e.target.dataset.add){
+        orderContainer.style.display = 'block'
+    }
+
+});
 
 renderMenuItems(menuItems);

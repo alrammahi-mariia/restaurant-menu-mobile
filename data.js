@@ -7,7 +7,7 @@ export const menuItems = [
         description: 'pepperoni, mushroom, mozarella',
         price: 14,
         isAdded: false,
-        uuid: uuidv4(),
+        id: 1,
     },
 
     {
@@ -16,7 +16,7 @@ export const menuItems = [
         description: 'beef, cheese, lettuce',
         price: 12,
         isAdded: false,
-        uuid: uuidv4(),
+        id: 2,
     },
     {
         title: 'Beer',
@@ -24,7 +24,7 @@ export const menuItems = [
         description: 'grain, hops, yeast, water',
         price: 12,
         isAdded: false,
-        uuid: uuidv4(),
+        id: 3,
     }  
 
 ]
