@@ -21,14 +21,26 @@ function renderMenuItems(items){
             </div>
         </div>`
     }).join("");
-
 }
 
-document.addEventListener('click', function(e){
-    if (e.target.dataset.add){
-        orderContainer.style.display = 'block'
-    }
 
+
+document.addEventListener('click', function(e){
+    const itemId = parseInt(e.target.dataset.add);
+    if(e.target.dataset.add){
+    orderContainer.style.display = 'flex';
+    console.log(addToOrder(itemId));
+    }
 });
 
+function addToOrder(id){
+    let orderItemsList = [];
+   const targetItem = menuItems.filter(function(item){
+    return item.id === id
+ })
+ orderItemsList.push(targetItem);
+ return orderItemsList;
+ }
+
 renderMenuItems(menuItems);
+

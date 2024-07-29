@@ -143,6 +143,7 @@ header{
     padding: 46px;
     text-align: center;
     display: none;
+    flex-direction: column;
 }
 
 .order-container h2 {
