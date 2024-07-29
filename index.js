@@ -29,18 +29,32 @@ document.addEventListener('click', function(e){
     const itemId = parseInt(e.target.dataset.add);
     if(e.target.dataset.add){
     orderContainer.style.display = 'flex';
-    console.log(addToOrder(itemId));
+    addToOrder(itemId);
     }
 });
 
 function addToOrder(id){
     let orderItemsList = [];
-   const targetItem = menuItems.filter(function(item){
-    return item.id === id
- })
- orderItemsList.push(targetItem);
- return orderItemsList;
- }
+    let orderItemsHtml = ``;
+   menuItems.map(function(item){
+    if (item.id === id)
+    orderItemsList.push(item);
+   })
+  
+    orderItemsList.map(orderItem => {
+    orderItemsHtml += `<div class="order-item">
+    <div class="item-name">${orderItem.title} <span class="remove">remove</span></div>
+    <div class="item-price">$${orderItem.price}</div>
+</div>`
+
+
+ });
+ return document.getElementById('items-container').innerHTML = orderItemsHtml;
+ 
+};
+
+
+
 
 renderMenuItems(menuItems);
 
