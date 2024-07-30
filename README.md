@@ -13,9 +13,17 @@ A user is able to:
 - see the message upon order completion
 
 ## Topics practiced
-- 
+
+- array methods: forEach(), map(), find(), filter(), reduce(), push()
+- conditionals 
+- render html items on the page with Javascript
+- change the display property of the html item
+- use an html element 'data attribute' property to connect the 'add' and 'remove' buttons with a target menu item
+- using html and css to follow a Figma design specifications
+- import/export array of data objects
 
 ## Deployed version
+
 
 
 
