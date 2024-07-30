@@ -1,6 +1,11 @@
 import { menuItems } from "./data.js";
 const menuItemsContainer = document.querySelector('.menu-items-container');
 const orderContainer = document.querySelector('.order-container');
+const itemPrice = document.querySelector('.item-price');
+const completeOrderBtn = document.querySelector('.complete-order');
+const modal = document.querySelector('.modal');
+let orderItemsList = [];
+
 
 function renderMenuItems(items){
     return menuItemsContainer.innerHTML = items.map(item => {
@@ -23,37 +28,58 @@ function renderMenuItems(items){
     }).join("");
 }
 
+function renderOrderItems(){
+    let orderItemsHtml = "";
+    orderItemsList.forEach(orderItem => {
+        orderItemsHtml += `<div class="order-item">
+        <div class="item-name">${orderItem.title} <span class="remove" data-remove="${orderItem.id}">remove</span></div>
+        <div class="item-price">$${orderItem.price}</div>
+    </div>`
+    })
+    document.getElementById('items-container').innerHTML = orderItemsHtml;
+}
 
 
 document.addEventListener('click', function(e){
-    const itemId = parseInt(e.target.dataset.add);
     if(e.target.dataset.add){
+    const itemId = parseInt(e.target.dataset.add);
     orderContainer.style.display = 'flex';
     addToOrder(itemId);
+    updateTotalPrice(orderItemsList);
+    }
+    else if(e.target.classList.contains('remove')){
+        const itemId = parseInt(e.target.dataset.remove);
+        removeFromOrder(itemId);
+        renderOrderItems();
+        updateTotalPrice(orderItemsList);
     }
 });
 
+completeOrderBtn.addEventListener('click', () => {
+    modal.style.display = 'flex';
+
+})
+
+function updateTotalPrice(itemsArray){
+    const totalPrice = itemsArray.reduce(function(total, current){
+       return total + current.price;
+    }, 0)
+
+    return itemPrice.textContent = `$${totalPrice}`;
+}
+
 function addToOrder(id){
-    let orderItemsList = [];
-    let orderItemsHtml = ``;
-   menuItems.map(function(item){
-    if (item.id === id)
-    orderItemsList.push(item);
-   })
-  
-    orderItemsList.map(orderItem => {
-    orderItemsHtml += `<div class="order-item">
-    <div class="item-name">${orderItem.title} <span class="remove">remove</span></div>
-    <div class="item-price">$${orderItem.price}</div>
-</div>`
+    const targetItem = menuItems.find(item => item.id === id);
+    if(targetItem){
+        orderItemsList.push(targetItem);
+        renderOrderItems();
+ }}
 
+ function removeFromOrder(id){
+    orderItemsList = orderItemsList.filter(item => item.id !== id);
+ }
 
- });
- return document.getElementById('items-container').innerHTML = orderItemsHtml;
  
-};
-
-
 
 
 renderMenuItems(menuItems);
