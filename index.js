@@ -4,6 +4,8 @@ const orderContainer = document.querySelector('.order-container');
 const itemPrice = document.querySelector('.item-price');
 const completeOrderBtn = document.querySelector('.complete-order');
 const modal = document.querySelector('.modal');
+const payBtn = document.querySelector('.modal-btn');
+const orderCompleteMsg = document.querySelector('.order-complete-msg');
 let orderItemsList = [];
 
 
@@ -60,6 +62,12 @@ completeOrderBtn.addEventListener('click', () => {
 
 })
 
+payBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'none';
+    orderCompleteMsg.style.display = 'flex';
+})
+
 function updateTotalPrice(itemsArray){
     const totalPrice = itemsArray.reduce(function(total, current){
        return total + current.price;
@@ -78,9 +86,6 @@ function addToOrder(id){
  function removeFromOrder(id){
     orderItemsList = orderItemsList.filter(item => item.id !== id);
  }
-
- 
-
 
 renderMenuItems(menuItems);
 
