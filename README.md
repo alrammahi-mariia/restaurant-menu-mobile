@@ -24,6 +24,7 @@ A user is able to:
 
 ## Deployed version
 
+https://alrammahi-mariia.github.io/restaurant-menu-mobile/
 
 
 
