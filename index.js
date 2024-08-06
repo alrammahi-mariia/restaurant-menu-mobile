@@ -65,6 +65,7 @@ completeOrderBtn.addEventListener('click', () => {
 payBtn.addEventListener('click', (e) => {
     e.preventDefault();
     modal.style.display = 'none';
+    orderContainer.style.display = 'none';
     orderCompleteMsg.style.display = 'flex';
 })
 

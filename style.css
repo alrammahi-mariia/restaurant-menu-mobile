@@ -248,7 +248,7 @@ header{
 
 .order-complete-msg{
     display: none;
-    margin: 0 auto 100px auto;
+    margin: 20px auto 100px auto;
     height: 120px;
     background-color: #ECFDF5;
     color: #065F46;
